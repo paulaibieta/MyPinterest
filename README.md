@@ -1,2 +1,0 @@
-# Thingz
-Pinterest-clone projects
