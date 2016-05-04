@@ -1,0 +1,13 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-3">Welcome to thingz</h1>
+
+      <% if user_signed_in? %>
+        <p>Click <%= link_to 'here', new_pin_path %> to create a new pin</p>
+      <% else %>
+        <p>Please register above to get started</p>    
+      <% end %>
+
+
+  </div>
+</div>
