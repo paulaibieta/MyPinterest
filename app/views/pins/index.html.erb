@@ -1,6 +1,12 @@
-<h1>All my pins</h1>
+<div class="container">
+  <h1>All Pins</h1>
+  
+  <%= @pins.each do |pin| %>
+    <%= pin.title %>
+    <%= pin.description %>
+    <%= link_to "edit pin", edit_pin_path(pin.id) %>
+    <%= link_to "delete pin", pin_path(pin.id), method: :delete, data: { confirm: 'Are you sure?' } %> 
+  <% end %>
+</div>
 
-<%= @pins.each do |pin| %>
-  <%= pin.title %>
-  <%= pin.description %>
-<% end %>
+
