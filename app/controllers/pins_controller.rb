@@ -13,7 +13,9 @@ class PinsController < ApplicationController
   end 
 
   def create
-    @pin = Pin.create pin_params
+    @pin = Pin.new pin_params
+    @pin.update_attribute("user", current_user)
+    @pin.save!
     render :show
   end 
 
@@ -36,7 +38,7 @@ class PinsController < ApplicationController
   private
 
   def pin_params
-    params.require(:pin).permit(:title, :description)
+    params.require(:pin).permit(:title, :description, :image)
   end 
 
 end 

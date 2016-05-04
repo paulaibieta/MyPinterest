@@ -1,12 +1,16 @@
 <div class="container">
-  <h1>All Pins</h1>
+  <div class="card-columns">
+    <% @pins.each do |pin| %>
+      <div class="card">
+        <%= image_tag pin.image.url(:index), class: "card-img-top" %> 
+          <div class="card-block">
+            <h4 class="card-title"><%= pin.title %></h4>
+            <p class="card-text"><%= pin.description %></p>
+            <%= link_to "see pin", pin_path(pin), class: "btn btn-info" %>
+          </div>
+      </div> 
+    <% end %>
+  </div>
+</div>          
+       
   
-  <%= @pins.each do |pin| %>
-    <%= pin.title %>
-    <%= pin.description %>
-    <%= link_to "edit pin", edit_pin_path(pin.id) %>
-    <%= link_to "delete pin", pin_path(pin.id), method: :delete, data: { confirm: 'Are you sure?' } %> 
-  <% end %>
-</div>
-
-

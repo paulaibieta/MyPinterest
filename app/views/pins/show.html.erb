@@ -1,10 +1,18 @@
-<h1>New pin created successfully!</h1>
-
-  <%= @pin.title %>
-  <%= @pin.description %>
-
-  <p>Click <%= link_to 'here', pins_path %> to see all pins</p>
-
-
-
-    
+<div class="container"> 
+  <div class="demo-card">
+    <div class="card">
+        <%= image_tag @pin.image.url(:show), class: "card-img-top img-responsive" %> 
+        <div class="card-block">
+          <h4 class="card-title"><%= @pin.title %></h4>
+            <p class="card-text"><%= @pin.description %></p>
+        </div>
+        <div class="card-block">
+          <% if current_user == @pin.user %>
+            <%= link_to "edit pin", edit_pin_path(@pin), class: "btn btn-primary" %>
+            <%= link_to "delete pin", pin_path(@pin), class: "btn btn-success", method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+          <%= link_to 'see all pins', pins_path, class: "btn btn-info" %>
+        </div>
+    </div>
+  </div>
+</div>

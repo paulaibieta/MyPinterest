@@ -1,7 +1,9 @@
-<%= form_for(@pin) do |f| %>
+<%= form_for @pin, html: { multipart: true } do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %><br>
   <%= f.label :description %>
   <%= f.text_field :description %><br>
+  <%= f.label :image %>
+  <%= f.file_field :image %><br>
   <%= f.submit "Create pin" %>
 <% end %> 
