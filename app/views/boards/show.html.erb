@@ -9,6 +9,7 @@
         <% if current_user == @board.user %>
           <%= link_to "edit board", edit_board_path(@board), class: "btn btn-success" %>
           <%= link_to "delete board", board_path(@board), class: "btn btn-info", method: :delete, data: { confirm: 'Are you sure? '} %>
+          <%= link_to 'see my boards', my_boards_path, class: 'btn btn-warning' %>
         <% end %>
         <%= link_to "see all boards", boards_path, class: "btn btn-primary" %>
       </div>  

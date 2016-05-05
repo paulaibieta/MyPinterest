@@ -5,7 +5,9 @@
           <div class="card-block">
             <h4 class="card-title"><%= my_board.name %></h4>
             <p class="card-text"><%= my_board.subtitle %></p>
-            <%= link_to "see my board", my_boards_path(my_board), class: "btn btn-info" %>
+            <%= link_to "see board", board_path(my_board), class: "btn btn-info" %>
+            <%= link_to "edit board", edit_board_path(my_board), class: "btn btn-primary" %>
+            <%= link_to "delete board", board_path(my_board), class: "btn btn-success", method: :delete, data: { confirm: 'Are you sure? '} %>
           </div>
       </div> 
     <% end %>

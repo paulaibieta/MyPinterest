@@ -6,7 +6,9 @@
           <div class="card-block">
             <h4 class="card-title"><%= my_pin.title %></h4>
             <p class="card-text"><%= my_pin.description %></p>
-            <%= link_to "see my pins", my_pins_path(my_pin), class: "btn btn-info" %>
+            <%= link_to "see pin", pin_path(my_pin), class: "btn btn-info" %>
+            <%= link_to "edit pin", edit_pin_path(my_pin), class: "btn btn-primary" %>
+            <%= link_to "delete pin", pin_path(my_pin), class: "btn btn-success", method: :delete, data: { confirm: 'Are you sure?' } %>
           </div>
       </div> 
     <% end %>

@@ -10,6 +10,7 @@
           <% if current_user == @pin.user %>
             <%= link_to "edit pin", edit_pin_path(@pin), class: "btn btn-primary" %>
             <%= link_to "delete pin", pin_path(@pin), class: "btn btn-success", method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to "see my pins", my_pins_path, class: "btn btn-warning" %>
           <% end %>
           <%= link_to 'see all pins', pins_path, class: "btn btn-info" %>
         </div>
