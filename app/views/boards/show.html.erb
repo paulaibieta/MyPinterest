@@ -4,6 +4,9 @@
       <div class="card-block">
         <h4 class="card-title"><%= @board.name %></h4>
         <p class="card-text"><%= @board.subtitle %></p>
+        <% @board.pins.each do |pin| %>
+          <%= image_tag pin.image.url(:thumb) %> 
+        <% end %>  
       </div>  
       <div class="card-block">  
         <% if current_user == @board.user %>

@@ -40,6 +40,13 @@ class BoardsController < ApplicationController
     @my_boards = Board.where(:user_id => current_user.id)
   end 
 
+  def add_pin_to_board
+    @board = Board.find params[:board]
+    @pin = Pin.find params[:pin]
+    @pin.boards << @board
+    render 'show'
+  end 
+
   private 
 
   def board_params

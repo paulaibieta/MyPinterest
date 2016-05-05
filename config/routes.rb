@@ -4,9 +4,11 @@ Rails.application.routes.draw do
   resources :pins
   resources :boards
 
-  get 'my_pins' => 'pins#my_pins'
+  post "boards/add_pin_to_board" => "boards#add_pin_to_board"
 
-  get 'my_boards' => 'boards#my_boards'
+  get "my_pins" => "pins#my_pins"
+
+  get "my_boards" => "boards#my_boards"
 
   root to: "pages#index"
   

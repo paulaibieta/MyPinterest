@@ -25,11 +25,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bootstrap', '~> 4.0.0.alpha3'
 
-gem 'devise'
+gem 'devise', '~> 3.2.0'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end
+
+gem 'activeadmin', '~> 1.0.0.pre2'
 
 gem "paperclip", "~> 5.0.0.beta1"
 

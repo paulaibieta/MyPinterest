@@ -21,6 +21,8 @@ class PinsController < ApplicationController
 
   def show
     @pin = Pin.find params[:id]
+    
+
   end 
 
   def update
@@ -36,7 +38,7 @@ class PinsController < ApplicationController
   end
 
   def my_pins
-    @my_pins = Pin.where(:user_id => current_user.id)
+    @my_pins = Pin.where(:user => current_user)
   end 
 
   private

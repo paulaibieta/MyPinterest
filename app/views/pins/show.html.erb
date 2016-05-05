@@ -13,6 +13,10 @@
             <%= link_to "see my pins", my_pins_path, class: "btn btn-warning" %>
           <% end %>
           <%= link_to 'see all pins', pins_path, class: "btn btn-info" %>
+          <%= form_tag(boards_add_pin_to_board_path(pin: @pin), method: :post) do |f| %>
+            <%= select_tag 'board', options_for_select(current_user.boards.collect{ |u| [u.name, u.id] }) %>
+          <%= submit_tag 'submit' %>
+          <% end %>  
         </div>
     </div>
   </div>
