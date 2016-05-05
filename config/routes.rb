@@ -2,6 +2,11 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :pins
+  resources :boards
+
+  get 'my_pins' => 'pins#my_pins'
+
+  get 'my_boards' => 'boards#my_boards'
 
   root to: "pages#index"
   

@@ -14,19 +14,28 @@
     <ul class="nav navbar-nav">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to 'See All Pins', pins_path, class: "nav-link" %><span class="sr-only">(current)</span>
+          <%= link_to 'All Pins', pins_path, class: "nav-link" %><span class="sr-only">(current)</span>
         </li>
-         <li class="nav-item">
+        <li class="nav-item active">
+          <%= link_to 'All Boards', boards_path, class: "nav-link" %><span class="sr-only">(current)</span>
+        </li>
+        <li class="nav-item active">
+          <%= link_to 'My Pins', my_pins_path, class: "nav-link" %><span class="sr-only">(current)</span>
+        </li>
+        <li class="nav-item active">
+          <%= link_to 'My Boards', my_boards_path, class: "nav-link" %><span class="sr-only">(current)</span>
+        </li>  
+        <li class="nav-item pull-xs-right btn btn-warning">
           <%= link_to 'Edit Profile', edit_user_registration_path, class: "nav-link" %><span class="sr-only">(current)</span>
         </li>
-        <li class="nav-item">
+        <li class="nav-item pull-xs-right btn btn-danger">
           <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "nav-link" %><span class="sr-only">(current)</span>
         </li>
       <% else %>
-        <li class="nav-item">
+        <li class="nav-item pull-xs-right btn btn-warning">
           <%= link_to 'Log In', new_user_session_path, class: "nav-link" %><span class="sr-only">(current)</span>
         </li>   
-        <li class="nav-item">
+        <li class="nav-item pull-xs-right btn btn-danger">
           <%= link_to 'Register here', new_user_registration_path, class: "nav-link" %><span class="sr-only">(current)</span>
         </li>  
       <% end %>

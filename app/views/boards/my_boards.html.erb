@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="card-columns">
+    <% @my_boards.each do |my_board| %>
+      <div class="card">
+          <div class="card-block">
+            <h4 class="card-title"><%= my_board.name %></h4>
+            <p class="card-text"><%= my_board.subtitle %></p>
+            <%= link_to "see my board", my_boards_path(my_board), class: "btn btn-info" %>
+          </div>
+      </div> 
+    <% end %>
+  </div>
+</div>          
+       

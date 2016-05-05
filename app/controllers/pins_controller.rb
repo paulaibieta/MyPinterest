@@ -35,6 +35,10 @@ class PinsController < ApplicationController
     redirect_to pins_path
   end
 
+  def my_pins
+    @my_pins = Pin.where(:user_id => current_user.id)
+  end 
+
   private
 
   def pin_params
